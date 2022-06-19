@@ -1,0 +1,36 @@
+
+departments as d
+----
+dept_no varchar(10) FK >- dm.dept_no UNIQUE
+dept_name varchar(30)
+
+
+dept_manager as dm 
+------------
+dept_no varchar(10)
+emp_no int
+
+dept_emp as de
+----
+emp_no int FK >- em.emp_no
+dept_no varchar(10) FK >- d.dept_no 
+
+employees as em
+----
+emp_no int UNIQUE FK >- dm.emp_no
+emp_title_id varchar(10)
+birth_date varchar(10)
+first_name (varchar20)
+last_name (varchar20)
+sex (varchar1)
+hire_date (varchar10)
+
+Titles as ti
+----
+titles_id varchar(10) FK >- em.emp_title_id UNIQUE
+title varchar(10)
+
+salaries as sa
+----
+emp_no int FK >- em.emp_no
+salary int
